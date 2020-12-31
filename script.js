@@ -44,20 +44,20 @@ function getTime() {
   minute.style.transition = `${currentMinute === 0 ? 'none' : ''}`
   second.style.transition = `${currentSecond === 0 ? 'none' : ''}`
 
+  currentHour = currentHour % 12
   time.innerText =
     currentMinute < 10
       ? `${currentHour}:0${currentMinute} ${ampm}`
       : `${currentHour}:${currentMinute} ${ampm}`
   date.innerHTML = `${currentDay}, ${currentMonth} <span class="circle">${monthDay}</span>`
 
-  currentHour = currentHour % 12
   second.style.transform = `translate(-50%,-100%) rotate(${
     6 * currentSecond
   }deg)`
   minute.style.transform = `translate(-50%,-100%) rotate(${
     6 * currentMinute
   }deg)`
-  hour.style.transform = `translate(-50%,-100%) rotate(${15 * currentHour}deg)`
+  hour.style.transform = `translate(-50%,-100%) rotate(${30 * currentHour}deg)`
 
   setTimeout(getTime, 500)
 }
