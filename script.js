@@ -58,7 +58,7 @@ function getTime() {
     6 * currentMinute
   }deg)`
   hour.style.transform = `translate(-50%,-100%) rotate(${30 * currentHour}deg)`
-
+  
   setTimeout(getTime, 500)
 }
 
